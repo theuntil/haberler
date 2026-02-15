@@ -1,0 +1,21 @@
+import { createClient } from "@supabase/supabase-js";
+import { NextResponse } from "next/server";
+
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
+
+export async function GET() {
+  const { data, error } = await supabase.storage
+    .from("yunus")
+    .list("", { limit: 100 });
+
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  const media = data.map((file) => file.name);
+
+  return NextResponse.json({ media });
+}

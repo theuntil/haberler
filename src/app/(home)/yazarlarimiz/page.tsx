@@ -132,7 +132,7 @@ export default function YazarHaticePage() {
                           href={`/istanbul/${item.slug}`}
                           className="min-w-[240px] snap-start bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition"
                         >
-                          <div className="relative w-full h-32 bg-gray-100">
+                          <div className="relative w-full h-50 bg-gray-100">
                             {img && (
                               <Image
                                 src={img}

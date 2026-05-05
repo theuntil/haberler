@@ -11,7 +11,6 @@ import HeroManşet from "@/components/home/HeroManset";
 import AdsMarquee from "../ads/AdsMarquee";
 import App from "@/components/appco";
 import Market from "@/components/home/Markethome";
-import HaticeYazar from "@/components/yazar";
 
 
 /* ---------------- TYPES ---------------- */
@@ -78,9 +77,12 @@ export default function HomePageClient({
         {/* ================= SOL SIDEBAR (DESKTOP) ================= */}
         <aside className="hidden lg:flex lg:flex-col gap-6 w-[180px] shrink-0">
 
+        
+
           {/* SOL REKLAM */}
           <div className="sticky top-24">
-            <AdsSidebarMarquee order="new" />
+            
+              <AdsSidebarMarquee order="new" />
           </div>
         </aside>
 
@@ -88,21 +90,16 @@ export default function HomePageClient({
         <section className="flex flex-col gap-10 min-w-0 w-full">
 
           {/* MOBİL + TABLET YATAY REKLAM */}
-          <div className="flex flex-col gap-3">
-            <Left city={lang === "en" ? "Istanbul" : "İstanbul"} />
+      <div className="flex flex-col gap-3">
+  <Left city={lang === "en" ? "Istanbul" : "İstanbul"} />
 
-            <div className="block lg:hidden">
-              <AdsMarquee />
-            </div>
-          </div>
+  <div className="block lg:hidden">
+    <AdsMarquee />
+  </div>
+</div>
 
           <HeroManşet lang={lang} />
-
-          <Market />
-
-          {/* ===== YAZAR: HATİCE ÇİÇEK ===== */}
-          <HaticeYazar lang={lang} />
-
+<Market />
           <HomeSectionGrid
             title={SECTION_TITLES.politika[lang]}
             items={data.politika}
@@ -166,7 +163,8 @@ export default function HomePageClient({
         {/* ================= SAĞ SIDEBAR (DESKTOP) ================= */}
         <aside className="hidden lg:block w-[180px] shrink-0">
           <div className="sticky top-24">
-            <AdsSidebarMarquee order="old" />
+           
+             <AdsSidebarMarquee order="old" />
           </div>
         </aside>
 

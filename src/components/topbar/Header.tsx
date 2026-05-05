@@ -74,6 +74,11 @@ export default function Topbar() {
     isEn ? Boolean((c as any).global) : c.city === true
   );
 
+  /* ---------- COLUMNISTS PATH ---------- */
+  const columnistsHref = isEn ? "/en/yazarlarimiz" : "/yazarlarimiz";
+  const columnistsActive =
+    pathname === columnistsHref || pathname.startsWith(`${columnistsHref}/`);
+
   /* ---------- CHILD MODE ---------- */
   function toggleChildMode() {
     const next = !childMode;
@@ -281,6 +286,17 @@ export default function Topbar() {
                 >
                   {(isEn ? "Cities" : "Şehirler").toUpperCase()}
                 </button>
+
+                {/* KÖŞE YAZARLARIMIZ */}
+                <Link
+                  href={columnistsHref}
+                  className={clsx(
+                    baseItem,
+                    columnistsActive ? itemActive : itemInactive
+                  )}
+                >
+                  {(isEn ? "Columnists" : "Köşe Yazarlarımız").toUpperCase()}
+                </Link>
                 </nav>
 </div>
 
@@ -330,6 +346,7 @@ export default function Topbar() {
                 <ChevronRight className="absolute right-6 top-1/2 -translate-y-1/2 w-6 h-6 text-white animate-scroll-hint-strong pointer-events-none" />
               </div>
             </div>
+            
 
           </div>
         </div>

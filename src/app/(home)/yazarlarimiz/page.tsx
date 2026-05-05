@@ -129,7 +129,7 @@ export default function YazarHaticePage() {
                       return (
                         <Link
                           key={item.id}
-                          href={`/${slugify(item.category)}/${item.slug}`}
+                          href={`/istanbul/${item.slug}`}
                           className="min-w-[240px] snap-start bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition"
                         >
                           <div className="relative w-full h-32 bg-gray-100">

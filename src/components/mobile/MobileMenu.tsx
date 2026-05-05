@@ -41,6 +41,10 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
 
   const [mode, setMode] = useState<"categories" | "cities">("categories");
 
+  /* ---------- COLUMNISTS PATH ---------- */
+  const columnistsHref = isEn ? "/en/yazarlarimiz" : "/yazarlarimiz";
+  const columnistsActive =
+    pathname === columnistsHref || pathname.startsWith(`${columnistsHref}/`);
 
 
   /* 🔒 Menü kapanınca her zaman categories */
@@ -139,7 +143,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                       href={href}
                       onClick={onClose}
                       className={clsx(
-                        "block rounded-2xl px-6 py-3.5 text-xs font-semibold tracking-wide transition",
+                        "block rounded-2xl px-6 py-2.5 text-xs font-semibold tracking-wide transition",
                         active
                           ? "bg-[#2A2D30] text-white"
                           : "text-white/35 hover:text-white"
@@ -157,6 +161,20 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                 >
                   {(isEn ? "Cities" : "Şehirler").toUpperCase()}
                 </button>
+
+                {/* KÖŞE YAZARLARIMIZ */}
+                <Link
+                  href={columnistsHref}
+                  onClick={onClose}
+                  className={clsx(
+                    "block rounded-2xl px-6 py-5 text-sm font-semibold tracking-wide transition",
+                    columnistsActive
+                      ? "bg-[#2A2D30] text-white"
+                      : "text-white/35 hover:text-white"
+                  )}
+                >
+                  {(isEn ? "Columnists" : "Köşe Yazarlarımız").toUpperCase()}
+                </Link>
               </nav>
             )}
 

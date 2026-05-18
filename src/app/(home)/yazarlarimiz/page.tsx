@@ -84,7 +84,7 @@ export default function YazarHaticePage() {
             <div className="bg-white border border-gray-100 rounded-2xl p-5 sticky top-6">
               <div className="flex items-center gap-3">
                 <Image
-                  src="https://supabase.kuzeybatihaber.cloud/storage/v1/object/public/news//1.png"
+                  src="https://supabase.kuzeybatihaber.cloud/storage/v1/object/public/news//HaticeCicek.png"
                   alt="Hatice Çiçek"
                   width={56}
                   height={56}
